@@ -10,6 +10,8 @@
         houseName = document.querySelector("#house-name"),
         houseInfo = document.querySelector(".house-info");
 
+  let targetHouse = "";
+
         // houseData is a multidimensional array (arrays within arrays!) Data containers can hold anything - in this case, each index or entry holds another, smaller container with 2 indexes - 1 with the house name, one with the house data.
         // when you click on a shield, the dataset.offset property is a 0 through 5 that's pointing at the main index of the houseData array (stark, baratheon, lannister etc). so the syntax becomes houseData[offset][0] for the house name, and houseData[offset][1] for the house data. Each gets assigned to the h1 and the paragraph tag
 
@@ -40,7 +42,14 @@
     // make the lightbox show up
     lightBox.classList.add('show-lightbox');
 
-    houseVideo.play();
+    // use JavaScript string interpolation to build the path to the target video
+		//debugger
+		let videoPath = `video/House-${targetHouse}.mp4`;
+
+		//load this new video videoPath
+		houseVideo.src = videoPath;
+		houseVideo.load();
+		houseVideo.play();
   }
 
   function closeLightBox(event) {
@@ -81,4 +90,6 @@
 
   closeButton.addEventListener("click", closeLightBox);
   houseVideo.addEventListener('ended', closeLightBox);
+  bannerImages.addEventListener('transitionend', popLightBox);
+
 })();
