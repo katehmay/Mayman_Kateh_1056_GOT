@@ -12,7 +12,7 @@
 /* ----- default styles ----- */
 body { background-image:url(../images/grungeBG.jpg);
 	background-repeat:no-repeat; background-position:center center;
-	background-color:#000000; font-size:16px; }
+	background-color:#000000; font-size:14px; }
 
 h1 {
 	font-family: 'GOT_font';
@@ -40,11 +40,11 @@ main {
 #houseImages img { float:left; }
 
 .house-info {
-  color: white;
-  width: 75%;
-  font-size: 1.5em;
+  color: #eee;
+  width: 70%;
+  font-size: 1.3em;
   line-height: 1.5;
-  margin: 10px auto 0 auto;
+  margin: 20px auto 0 auto;
 }
 
 #bottomNav { margin-top:30px; }
@@ -86,17 +86,17 @@ main {
 .greyjoy { background-position:-202px -54px; }
 .greyjoy:hover { background-position:-202px 0px; }
 
-.arryn { background-position:-253px -54px; }
-.arryn:hover { background-position:-253px 0px; }
+.arryn { background-position:-252.5px -54px; }
+.arryn:hover { background-position:-252.5px 0px; }
 
-.frey { background-position:-50.5px -54px; }
-.frey:hover { background-position:-51px 0px; }
+.frey { background-position:-303.5px -54px; }
+.frey:hover { background-position:-303.5px 0px; }
 
-.tyrell { background-position:-101px -54px; }
-.tyrell:hover { background-position:-101px 0px; }
+.tyrell { background-position:-354px -54px; }
+.tyrell:hover { background-position:-354px 0px; }
 
-.targaryen { background-position:-152px -54px; }
-.targaryen:hover { background-position:-152px 0px; }
+.targaryen { background-position:-405px -54px; }
+.targaryen:hover { background-position:-405px 0px; }
 
 /* ----- end image sprite ----- */
 
