@@ -8,7 +8,11 @@
         houseVideo = document.querySelector('.house-video'),
         bannerImages = document.querySelector("#houseImages"),
         houseName = document.querySelector("#house-name"),
-        houseInfo = document.querySelector(".house-info");
+        houseInfo = document.querySelector(".house-info"),
+        backButton = document.querySelector('#back'),
+        playButton = document.querySelector('#play'),
+        pauseButton = document.querySelector('#pause'),
+        forwardButton = document.querySelector('#forward');
 
   let targetHouse = "";
 
@@ -47,6 +51,24 @@
   		["targaryen", `House Targaryen of Dragonstone is an exiled Great House of Westeros and the former royal house of the Seven Kingdoms. House Targaryen conquered and unified the realm before it was deposed during Robert's Rebellion and House Baratheon replaced it as the new royal House. The two surviving Targaryens, Viserys and Daenerys, fled into exile to the Free Cities of Essos across the Narrow Sea. After she laid waste to a surrendered King's Landing, Daenerys was assassinated by Jon Snow to prevent further destruction. Jon became the last known living member of House Targaryen and his identity as the son of Rhaegar Targaryen is kept hidden from Westeros. He is exiled to the Night's Watch for the assassination of Daenerys. The bloodline of House Targaryen also still exists in various houses, such as House Baratheon, House Velaryon, and House Martell.`],
     ];
 
+  function backVideo() {
+    let backwardTime = houseVideo.currentTime - 15;
+    houseVideo.currentTime = backwardTime;
+  }
+
+  function playVideo() {
+    houseVideo.play();
+  }
+
+  function pauseVideo() {
+    houseVideo.pause();
+  }
+
+  function forwardVideo() {
+    let forwardedTime = houseVideo.currentTime + 15;
+    houseVideo.currentTime = forwardedTime;
+  }
+
   function popLightBox() {
     // make the lightbox show up
     lightBox.classList.add('show-lightbox');
@@ -63,7 +85,6 @@
 
   function closeLightBox(event) {
     event.preventDefault();
-
     // make the lightbox close
     lightBox.classList.remove('show-lightbox');
     houseVideo.currentTime = 0; // rewind the video
@@ -100,5 +121,10 @@
   closeButton.addEventListener("click", closeLightBox);
   houseVideo.addEventListener('ended', closeLightBox);
   bannerImages.addEventListener('transitionend', popLightBox);
+  backButton.addEventListener("click", backVideo);
+  pauseButton.addEventListener("click", pauseVideo);
+  playButton.addEventListener("click", playVideo);
+  forwardButton.addEventListener("click", forwardVideo);
+
 
 })();
